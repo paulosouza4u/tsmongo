@@ -111,7 +111,7 @@ db.books.aggregate([
             as: "authorDetails"
         }
     }
-])
+]);
 
 /**
 *

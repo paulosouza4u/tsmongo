@@ -1,0 +1,27 @@
+
+01/09 - terça-feira
+
+Fundamentos do MongoDB
+https://www.mongodb.com/pt-br/resources/products/fundamentals/basics
+
+Docker Sandboxes vs DockerDesktop
+https://www.docker.com/products/docker-sandboxes/
+
+Instale o MongoDB Community com Docker
+https://www.mongodb.com/pt-br/docs/v7.0/tutorial/install-mongodb-community-with-docker/
+
+mongo - Docker Official Image
+https://hub.docker.com/_/mongo
+
+visualizar banco mongo
+https://www.mongodb.com/products/tools/compass
+
+REPO?
+projeto - add email de aluno (caixa de entrada)
+
+-----------------------------------------------------------------
+
+command:
+docker run -d --name betmongo -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=username_root -e MONGO_INITDB_ROOT_PASSWORD=senha_root -v "D:\laragon\data\mongo_data:/data/db" mongo:latest
+
+-----------------------------------------------------------------
