@@ -1,4 +1,4 @@
-import express, { Express, Request, Response } from 'express';
+import express, { Express } from 'express';
 import swaggerUi from 'swagger-ui-express';
 import { RegisterRoutes } from './build/routes';
 import fs from 'fs';

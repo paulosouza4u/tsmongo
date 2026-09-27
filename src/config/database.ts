@@ -1,24 +1,23 @@
 import * as dotenv from 'dotenv';
 import mongoose from "mongoose";
 
-export const connectDB = async () => {
-    dotenv.config();
+dotenv.config();
 
+export const connectDB = async () => {
     const user = process.env.MONGODB_USERNAME;
     const pass = process.env.MONGODB_PASSWORD;
     const url = process.env.MONGODB_URI || 'localhost';
-    const port = process.env.MONGODB_PORT;
-    const dbName = process.env.MONGODB_DATABASE || 'test';
+    const port = process.env.MONGODB_PORT || '27017';
+    const dbName = process.env.MONGODB_DATABASE || 'cinema_db';
+
+    const auth = user && pass ? `${user}:${pass}@` : '';
+    const uri = `mongodb://${auth}${url}:${port}/${dbName}?authSource=admin`;
 
     try {
-        const uri = `mongodb://${user}:${pass}@${url}:${port}`;
-
-        await mongoose.connect(uri, {
-            dbName
-        });
-        console.log(`Connected to MongoDB database: ${dbName}`);
-    } catch (e) {
-        console.log(`Dont connect to MongoDB database:${dbName}`);
-        console.error(e);
+        await mongoose.connect(uri);
+        console.log(`[Database] MongoDB conectado com sucesso. ${url}:${port}/${dbName}`);
+    } catch (error) {
+        console.error(`[Database Error] Falha na conexão.`, error);
+        process.exit(1);
     }
 };

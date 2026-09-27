@@ -1,4 +1,0 @@
-
-- Iniciar app, index = ok
-- Copiar classes e testar mongoose + Assistir Aula Quinta-Feira (17/09)
-

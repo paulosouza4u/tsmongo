@@ -1,10 +1,16 @@
 {
     "entryFile": "src/app.ts",
-    "controllerPathGlobs": ["src/controllers/**/*.ts"],
-    "spec": {
-        "outputDirectory": "dist/build"
-    },
+    "controllerPathGlobs": ["src/controllers/**/*.controller.ts"],
     "routes": {
         "routesDir": "src/build"
+    },
+    "spec": {
+        "outputDirectory": "dist/build",
+        "specVersion": 3,
+        "info": {
+            "title": "API de Filmes e Diretores (Cinema DB)",
+            "version": "1.0.0",
+            "description": "API RESTful construída com TypeScript, Express, Mongoose e TSOA"
+        }
     }
 }
